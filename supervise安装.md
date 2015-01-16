@@ -34,7 +34,9 @@ cp: cannot stat `compile/svscan': No such file or directory
 ```
 也可以采取手动修改的方式： 
 
-`# vi src/conf-cc` 
+```shell
+# vi src/conf-cc
+``` 
 在最后加上 -include /usr/include/errno.h 
 缺省会安装到/usr/local/bin目录，最好加到PATH环境变量里。 
 
@@ -56,15 +58,19 @@ cp: cannot stat `compile/svscan': No such file or directory
 /home/work/hhvm-3.0.1/log/main/ # log files go here, optional
 
 run是supervise执行的唯一入口, 可以简单写如下脚本：
+```shell
 #! /bin/sh
 exec 2>&1
 exec /home/work/hhvm-3.0.1/bin/hhvm --mode server \
 --config /home/work/hhvm-3.0.1/conf/hhvm.conf \
 --config-value PidFile=/home/work/hhvm-3.0.1/var/hhvm.pid
-
+```
 可以根据自己的程序启动命令修改，run脚本需要有执行权限：
+```shell
 # chmod +x /home/work/hhvm-3.0.1/run
-
+```
 启动：
+```shell
 nohup supervise  /home/work/hhvm-3.0.1/ &
+```
 因为supervise是独占运行的，因此需要加上nohup后台执行
