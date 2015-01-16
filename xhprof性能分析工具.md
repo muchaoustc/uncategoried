@@ -63,3 +63,4 @@ CPU Time                        用户耗的时间+内核耗的时间
 Inclusive CPU                   包括子函数一起所占用的CPU
 Exclusive CPU                  函数自身所占用的CPU
 ```
+![1](https://raw.githubusercontent.com/muchaoustc/uncategoried/master/images/xhprof.jpg)
