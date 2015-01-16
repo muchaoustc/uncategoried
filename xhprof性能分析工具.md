@@ -49,13 +49,17 @@ var_dump($run_id);
 
 #查看测试结果
 将xhprof_lib&&xhprof_html相关目录copy到可以访问到的地址
+
 访问 http://xxx/xhprof_html/index.php?run=$run_id&source=xhprof 
+
 就可经看到你的php代码运行的相关情况，注意source参数与save_run的第二个参数一致
 
 下面是一些参数说明
+```
 Inclusive Time                  包括子函数所有执行时间。
 Exclusive Time/Self Time        函数执行本身花费的时间，不包括子树执行时间。
 Wall Time                       花去了的时间或挂钟时间。
 CPU Time                        用户耗的时间+内核耗的时间
 Inclusive CPU                   包括子函数一起所占用的CPU
 Exclusive CPU                  函数自身所占用的CPU
+```
