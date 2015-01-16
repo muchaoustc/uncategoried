@@ -33,12 +33,12 @@ xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);
 // 测试代码结束
 
 $data = xhprof_disable();   //返回运行数据
- 
+$XHPROF_ROOT = "/home/work/xhprof"; //xhprof的安装路径
 // xhprof_lib在下载的包里存在这个目录,记得将目录包含到运行的php代码中
-include_once "xhprof_lib/utils/xhprof_lib.php";  
-include_once "xhprof_lib/utils/xhprof_runs.php";  
+include_once $XHPROF_ROOT . "xhprof_lib/utils/xhprof_lib.php";  
+include_once $XHPROF_ROOT . "xhprof_lib/utils/xhprof_runs.php";  
  
-$objXhprofRun = new XHProfRuns_Default(); 
+$objXhprofRun = new XHProfRuns_Default($XHPROF_ROOT); 
 
 // 第一个参数j是xhprof_disable()函数返回的运行信息
 // 第二个参数是自定义的命名空间字符串(任意字符串),
@@ -63,4 +63,4 @@ CPU Time                        用户耗的时间+内核耗的时间
 Inclusive CPU                   包括子函数一起所占用的CPU
 Exclusive CPU                  函数自身所占用的CPU
 ```
-![1](https://raw.githubusercontent.com/muchaoustc/uncategoried/master/images/xhprof.jpg)
+![xhprof生成图片](https://raw.githubusercontent.com/muchaoustc/uncategoried/master/images/xhprof.jpg)
