@@ -48,7 +48,7 @@ var_dump($run_id);
 ```
 
 #查看测试结果
-将xhprof\_lib&&xhprof_html相关目录copy到可以访问到的地址
+将xhprof\_lib&&xhprof\_html相关目录copy到可以访问到的地址
 访问 http://xxx/xhprof_html/index.php?run=$run_id&source=xhprof 
 就可经看到你的php代码运行的相关情况，注意source参数与save_run的第二个参数一致
 
